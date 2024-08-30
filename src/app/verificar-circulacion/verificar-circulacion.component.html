@@ -1,0 +1,37 @@
+<div class="container">
+    <h2>Verificación de Pico y Placa del Vehículo</h2>
+    <form (ngSubmit)="verificarCirculacion()" #form="ngForm">
+        <div class="form-group">
+            <label for="matricula">Matrícula</label>
+            <input 
+                id="matricula" 
+                type="text" 
+                [(ngModel)]="matricula" 
+                name="matricula" 
+                class="form-control" 
+                placeholder="Ingrese la matrícula" 
+                required
+            />
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="fechaActual">Fecha Actual</label>
+            <input 
+                id="fechaActual" 
+                type="date" 
+                [(ngModel)]="fechaActual" 
+                name="fechaActual" 
+                class="form-control" 
+                placeholder="Ingrese la Fecha" 
+                required
+            />
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Consultar</button>
+    </form>
+
+    <div class="results">
+        <p *ngIf="resultado" class="result success">{{ resultado }}</p>
+        <p *ngIf="error" class="result error">{{ error }}</p>
+    </div>
+</div>
